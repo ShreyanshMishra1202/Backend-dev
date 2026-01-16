@@ -1,0 +1,4 @@
+Hello from example.txt!
+This file is read by server.js and printed to the console.
+UTF-8 test: こんにちは — Привет — 안녕하세요
+Notes: add more lines or JSON if you want to test parsing.
