@@ -1,2 +1,0 @@
-This is synchronous write to the file.
-This is synchronous append to the file.
