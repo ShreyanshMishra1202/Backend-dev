@@ -36,6 +36,21 @@ app.get('/headers',(req,res)=>{
     res.status(200).json(headers);
 });
 
+app.post("/username",(req,res) => {
+    console.log(req.body);
+
+    const {name, password} = req.body;
+    
+    if(!name || !password){
+        return res.status(400).json({error: "Name and password are required"});
+    }
+    res.status(200).json({message: "User created successfully"});
+
+    if(password.length < 6){
+        return res.status(400).json({error: "Password must be at least 6 characters long"});
+    }
+});
+
 app.listen(3000,()=>{
     console.log(`Server is listening on port ${port}`);
 });
