@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= title %></title>
+</head>
+<body>
+  <h1><%= title %></h1>
+  <form action="/users" method="get">
+    <label for="name">Filter by name</label>
+    <input id="name" name="name" type="text" value="<%= nameQuery %>">
+    <button type="submit">Search</button>
+  </form>
+
+  <% if (users.length === 0) { %>
+    <p>No users match that search.</p>
+  <% } else { %>
+    <ul>
+      <% users.forEach(function(user) { %>
+        <li><%= user.name %></li>
+      <% }); %>
+    </ul>
+  <% } %>
+
+  <p><a href="/">Back to search</a></p>
+</body>
+</html>

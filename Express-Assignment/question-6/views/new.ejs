@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= title %></title>
+</head>
+<body>
+  <h1><%= title %></h1>
+
+  <% if (error) { %>
+    <p style="color: red;"><%= error %></p>
+  <% } %>
+
+  <form action="/posts" method="post">
+    <div>
+      <label for="title">Title</label>
+      <input id="title" name="title" type="text" value="<%= form.title %>">
+    </div>
+    <div>
+      <label for="body">Body</label>
+      <textarea id="body" name="body" rows="6"><%= form.body %></textarea>
+    </div>
+    <button type="submit">Publish</button>
+  </form>
+
+  <p><a href="/posts">Back to posts</a></p>
+</body>
+</html>
